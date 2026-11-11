@@ -12,7 +12,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -93,7 +92,7 @@ class MainTest {
         sampleAddressForAddressEntity = new Address();
         sampleAddressForAddressEntity.setId(1L);
         sampleAddressForAddressEntity.setStreet("Main Street");
-        sampleAddressForAddressEntity.setNo(100);
+        sampleAddressForAddressEntity.setNo("100");
         sampleAddressForAddressEntity.setCity("Sample City");
         sampleAddressForAddressEntity.setCountry("Sample Country");
         sampleAddressForAddressEntity.setDescription("Near the big landmark");
@@ -129,7 +128,7 @@ class MainTest {
 
         sampleAddressForAddressRepositoryTest = new Address();
         sampleAddressForAddressRepositoryTest.setStreet("Main Street");
-        sampleAddressForAddressRepositoryTest.setNo(42);
+        sampleAddressForAddressRepositoryTest.setNo("42");
         sampleAddressForAddressRepositoryTest.setCity("Sample City");
         sampleAddressForAddressRepositoryTest.setCountry("Sample Country");
         sampleAddressForAddressRepositoryTest.setDescription("Near the park");
@@ -137,7 +136,7 @@ class MainTest {
 
         Address address = new Address();
         address.setStreet("Main Street");
-        address.setNo(42);
+        address.setNo("42");
         address.setCity("Sample City");
         address.setCountry("Sample Country");
         entityManager.persist(address);
@@ -181,7 +180,7 @@ class MainTest {
     void testAddressProperties() {
         assertEquals(1L, sampleAddressForAddressEntity.getId());
         assertEquals("Main Street", sampleAddressForAddressEntity.getStreet());
-        assertEquals(100, sampleAddressForAddressEntity.getNo());
+        assertEquals("100", sampleAddressForAddressEntity.getNo());
         assertEquals("Sample City", sampleAddressForAddressEntity.getCity());
         assertEquals("Sample Country", sampleAddressForAddressEntity.getCountry());
         assertEquals("Near the big landmark", sampleAddressForAddressEntity.getDescription());
